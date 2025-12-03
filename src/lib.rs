@@ -56,9 +56,9 @@ mod tests {
     fn solve_day()->Result<(), Box<dyn std::error::Error>>{
         dotenvy::dotenv()?;
         let mut day_solver = solvers::s_2025::day_2::solution::new();
-        day_solver.solve_part_2_demo()?;
+        //day_solver.solve_part_2_demo()?;
         
-        //day_solver.solve_part_1_demo()?;
+        day_solver.solve_part_2_demo()?;
         day_solver.solve_day()?;
         //day_solver.check_solutions();
         Ok(())
