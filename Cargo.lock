@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "AOC_LIB"
+name = "AOC_Rust"
 version = "0.1.0"
 dependencies = [
  "cookie",
