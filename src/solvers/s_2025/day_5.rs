@@ -42,7 +42,7 @@ impl solution{
         self.solve_day().unwrap();
 
         assert_eq!(self.part_1_solution,761);
-        assert_eq!(self.part_2_solution,349530123659791);
+        assert_eq!(self.part_2_solution,345755049374932);
     }
 
 }
@@ -94,9 +94,10 @@ pub fn row_operation_part_1_fails(input:&str)->Option<u32>{
 
 
 
-pub fn reduce_input_part_2(start_vec:Vec<(u128,u128)>)->Vec<(u128,u128)>{
+pub fn reduce_input_part_2(mut start_vec:Vec<(u128,u128)>)->Vec<(u128,u128)>{
 
     let mut dyn_ranges:Vec<(u128,u128)> = Vec::new();
+    start_vec.sort();
     let mut ranges_og = start_vec.into_iter();
     dyn_ranges.push(        ranges_og.nth(0).unwrap()  );//push first element into range
 
@@ -139,7 +140,7 @@ impl Aoc for solution{
 
     fn solve_part_1(&mut self,input:&str)->Result<(),std::io::Error>{
 
-        println!("Input is:\n{}",input);
+        //println!("Input is:\n{}",input);
 
         let lines =input.lines();
         let ranges = lines.clone().take_while(|x|{
@@ -166,7 +167,7 @@ impl Aoc for solution{
             }
         }).collect_vec();
         self.part_1_solution = valid_numbers.iter().count() as u128;
-        println!("Valid numbers:{:?}, Count:{}",valid_numbers,self.part_1_solution);
+        //println!("Valid numbers:{:?}, Count:{}",valid_numbers,self.part_1_solution);
         //println!("All ranges {:?}",ranges);
 /* 
         let result: u32 = input
@@ -206,12 +207,12 @@ impl Aoc for solution{
         });
         let total_count = ranges_og.clone().count();
         let mut result_vec:Vec<(u128, u128)> = ranges_og.collect();
-        for _ in 0..=total_count{
+        for _ in 0..=(total_count){
             result_vec = reduce_input_part_2(result_vec.clone());//We could implement early exist 
             //println!("Range Complete");
         }
         result_vec.sort();
-        println!("All Ranges {:?}",result_vec);
+        //println!("All Ranges {:?}",result_vec);
         let result:u128 = result_vec.iter().map(|(lower,upper)|{
             upper - lower + 1
         }).sum();
