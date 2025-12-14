@@ -34,7 +34,7 @@ mod tests {
     #[tokio::test]
     async fn download_single_day() -> Result<(), Box<dyn std::error::Error>> {
         let year = 2025;
-        let day = 7;
+        let day = 9;
         dotenvy::dotenv()?;
         let session_string =             &std::env::var("session").unwrap();
         let cli = download_day::build_cli_with_sess(&session_string).await?;
@@ -56,13 +56,13 @@ mod tests {
     fn solve_day()->Result<(), Box<dyn std::error::Error>>{
         dotenvy::dotenv()?;
 
-        let mut day_solver = solvers::s_2025::day_7::solution::new();
+        let mut day_solver = solvers::s_2025::day_9::solution::new();
         //day_solver.solve_part_1_demo()?;
         //day_solver.solve_part_2_demo()?;
-
+        //day_solver.check_part_2();;
         //day_solver.solve_part_1("....\n@@@@\n@@@.\n....")?;
-        //day_solver.solve_day()?;
-        day_solver.check_solutions();
+        day_solver.solve_day()?;
+        //day_solver.check_solutions();
         Ok(())
     }
 

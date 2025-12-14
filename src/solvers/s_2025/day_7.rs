@@ -36,7 +36,11 @@ impl solution{
         assert_eq!(self.part_2_solution,40);
         Ok(())
     }
-
+    pub fn check_part_2(&mut self){
+        let input = self.get_input().unwrap();
+        let _ = self.solve_part_2(&input);
+        assert_eq!(self.part_2_solution,231229866702355);
+    }
     pub fn check_solutions(&mut self){
         self.solve_day().unwrap();
 
