@@ -59,10 +59,13 @@ mod tests {
         let mut day_solver = solvers::s_2025::day_9::solution::new();
         //day_solver.solve_part_1_demo()?;
         //day_solver.solve_part_2_demo()?;
-        //day_solver.check_part_2();;
+        //day_solver.check_part_2();
         //day_solver.solve_part_1("....\n@@@@\n@@@.\n....")?;
-        day_solver.solve_day()?;
-        //day_solver.check_solutions();
+        //day_solver.solve_part_2("4,4\n5,4\n5,3\n3,3\n3,9\n8,9\n8,3\n7,3\n7,8\n4,8")?;
+        //day_solver.solve_day()?;
+        //370443228 is too low for part 2 day 9
+        //1560299548
+        day_solver.check_solutions();
         Ok(())
     }
 
