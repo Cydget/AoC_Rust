@@ -51,7 +51,7 @@ mod tests {
     fn fsolve_day()->Result<(), Box<dyn std::error::Error>>{
         dotenvy::dotenv()?;
 
-        let mut day_solver = solvers::s_2025::day_11::solution::new();
+        let mut day_solver = solvers::s_2025::day_12::solution::new();
         //day_solver.solve_part_1_demo()?;
         //day_solver.solve_part_2_demo()?;
         //day_solver.check_part_2();
@@ -73,3 +73,5 @@ mod tests {
 //250^12 = 
 //00000
 //249C12 = way two fucking big
+
+//508 is too high for day 12
